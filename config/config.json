@@ -1,0 +1,17 @@
+{
+    "files": [
+        {
+            "dest": "index.html",
+            "template": "index",
+            "locals": {
+                "head": "Login",
+                "appContext": "boLogin",
+                "state": "300"
+            }
+        }
+    ],
+    "globals": {
+        "app_name": "boLogin",
+        "root": "root"
+    }
+}

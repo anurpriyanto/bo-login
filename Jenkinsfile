@@ -4,7 +4,7 @@ pipeline {
         // Define your Docker Hub credentials and image name here
         DOCKER_IMAGE = 'anurpriyanto/bologin:v1' // Image name
         KUBE_CONTEXT = 'bo-project'  // Kube context if you have multiple clusters
-        KUBERNETES_NAMESPACE = 'bo-project'  // Replace with your namespace
+        KUBERNETES_NAMESPACE = 'default'  // Replace with your namespace
     }
     stages {
         stage('Checkout') {

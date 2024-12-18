@@ -47,7 +47,7 @@ pipeline {
                 script {
                     // Deploy to Kubernetes using kubectl
                     sh '''
-                        kubectl apply -f deployment.yaml -n $KUBERNETES_NAMESPACE
+                        kubectl apply -f k8s/deployment.yaml -n $KUBERNETES_NAMESPACE
                     '''
                 }
             }
@@ -57,7 +57,7 @@ pipeline {
                 script {
                     // Deploy to Kubernetes using kubectl
                     sh '''
-                        kubectl rollout restart deployment/python-app-iaj -n $KUBERNETES_NAMESPACE
+                        kubectl rollout restart deployment/login-app -n $KUBERNETES_NAMESPACE
                     '''
                 }
             }

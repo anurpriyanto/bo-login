@@ -46,7 +46,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: login-app
+            name: login-service
             port:
               number: 80
 ---

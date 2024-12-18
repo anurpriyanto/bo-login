@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-app
+  labels:
+    app: login
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: login
+  template:
+    metadata:
+      labels:
+        app: login
+    spec:
+      containers:
+      - name: login-container
+        image: anurpriyanto/bologin:latest
+        ports:
+        - containerPort: 6001
+        envFrom:
+        - configMapRef:
+            name: application-properties
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/resources
+      volumes:
+      - name: config-volume
+        configMap:
+          name: application-properties
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login-service
+spec:
+  selector:
+    app: login
+  ports:
+    - protocol: TCP
+      port: 6001
+      targetPort: 6001
+  type: NodePort
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: application-properties
+data:
+  application.properties: |
+    server.port=6001

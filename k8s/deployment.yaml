@@ -42,7 +42,7 @@ spec:
   - host: anur.aboutdevops.my.id # Ganti dengan domain/subdomain Anda
     http:
       paths:
-      - path: /
+      - path: /boLogin
         pathType: Prefix
         backend:
           service:

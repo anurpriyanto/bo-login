@@ -57,7 +57,7 @@ pipeline {
                 script {
                     // Deploy to Kubernetes using kubectl
                     sh '''
-                        kubectl rollout restart deployment/auth-app -n $KUBERNETES_NAMESPACE
+                        kubectl rollout restart auth-app -n $KUBERNETES_NAMESPACE
                     '''
                 }
             }

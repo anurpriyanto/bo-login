@@ -52,16 +52,16 @@ pipeline {
                 }
             }
         }
-        stage('rollout restart  Kubernetes') {
-            steps {
-                script {
-                    // Deploy to Kubernetes using kubectl
-                    sh '''
-                        kubectl rollout restart auth-app -n $KUBERNETES_NAMESPACE
-                    '''
-                }
-            }
-        }
+        // stage('rollout restart  Kubernetes') {
+        //     steps {
+        //         script {
+        //             // Deploy to Kubernetes using kubectl
+        //             sh '''
+        //                 kubectl rollout restart auth-app -n $KUBERNETES_NAMESPACE
+        //             '''
+        //         }
+        //     }
+        // }
     }
     post {
         always {
